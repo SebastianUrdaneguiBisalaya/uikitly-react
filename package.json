@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "keywords": [],
   "author": "Sebastian Marat Urdanegui Bisalaya (https://sebastianurdanegui.vercel.app/)",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
-    "tsup": "8.5.0",
+    "tsdown": "^0.14.2",
     "typescript": "5.9.2"
   },
   "peerDependencies": {
