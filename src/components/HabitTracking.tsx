@@ -11,7 +11,7 @@ export interface HabitTrackingProps {
   /**
    * Array of objects used to fill the background of each cell based on its activity.
    */
-  colors: { min: number; max: number; color: string; }[];
+  colors?: { min: number; max: number; color: string; }[];
 
   /**
    * Additional CSS classes
