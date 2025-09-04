@@ -7,6 +7,10 @@ The goal of this library is to help developers save working hours by reusing rea
 
 > Developed by [Sebastian Marat Urdanegui Bisalaya](https://sebastianurdanegui.vercel.app/)
 
+![uikitly-react-light](https://res.cloudinary.com/drzumfcdp/image/upload/v1757027513/projects/Captura_de_pantalla_2025-09-04_a_la_s_6.09.21_p._m._kwjeue.png)
+
+![uikitly-react-dark](https://res.cloudinary.com/drzumfcdp/image/upload/v1757027513/projects/Captura_de_pantalla_2025-09-04_a_la_s_6.10.09_p._m._byvxnn.png)
+
 ## Installing
 
 Using npm:
@@ -27,14 +31,15 @@ pnpm add uikitly-react
 
 | Prop           | Required | Type             | Description |
 | -------------- | :------: | :--------------: | ----------- |
+| bgColor        | ❌       | `string`         | Background color of cells that have no activity. <br> Default: `bg-[#EFF2F5] dark:bg-[#151B23]`. |
+| className      | ❌       | `string`         | Additional CSS classes |
 | colors         | ❌       | `ColorRank[]`    | Array of objects used to fill the background of each cell based on its activity. <br> By default, this array uses colors from the GitHub contribution tracker. |
-| bgColor        | ❌       | `string`         | Background color of cells that have no activity in light theme. <br> Default: `#EFF2F5`. |
-| bgColorDark    | ❌       | `string`         | Background color of cells that have no activity in dark mode. <br> Default: `#151B23`. |
 | data           | ✅       | `StatsList[]`    | Array of objects that contains the user data based on activity (`value`) of each day (`date`). |
 | legendLabelMax | ❌       | `string`         | Legend name of **minimum** value. <br> Default: `'Less'`. |
 | legendLabelMin | ❌       | `string`         | Legend name of **maximum** value. <br> Default: `'More'`. |
 | months         | ❌       | `string[]`       | Array of strings with the months. <br> Length: exactly 12. |
-| theme          | ❌       | `string`         | Property used to change colors based on theme. <br> Default: `'system'` (based on user preference). Accepted: `'system'`, `'light'`, `'dark'`. |
+| onCellClick    | ❌       | `(data: { date: string; value: number; }) => void` | Callback function when a cell is clicked |
+| textColor      | ❌       | `string`         | Default: `text-[#1f2328] dark:text-[#f0f6fc]` |
 | tooltipLabel   | ❌       | `string`         | Detail tasks of each day. <br> Default: `'tasks on'`. |
 | weekDays       | ❌       | `string[]`       | Array of strings with the days of the week. <br> Length: exactly 7. |
 
@@ -42,7 +47,7 @@ pnpm add uikitly-react
 Types:
 | Type | Description |
 | --- | --- |
-| ColorRank | { min: number; max: number; color: string; colorDark?: string; } |
+| ColorRank | { min: number; max: number; color: string; } |
 | StatsList | { date: string; value: number; } |
 
 
@@ -60,11 +65,15 @@ Using React with TypeScript:
 
 | Prop             | Required | Type                   | Description |
 | ---------------- | :------: | :--------------------: | ----------- |
+| bgRankEmpty      | ❌       | `string`               | Background color of rectangle without data in light theme. <br> Default: `#EFF2F5`. |
+| bgRankEmptyDark  | ❌       | `string`               | Background color of rectangle without data in dark theme. <br> Default: `#151B23`. |
+| bgSpacer         | ❌       | `string`               | Background color of spacer. <br> Default: `bg-[#2a2a2a] dark:bg-[#aaaaaa]`. |
+| className        | ❌       | `string`               | Additional CSS classes |
 | data             | ✅       | `TooltipStatus[]`      | Array of objects that contains the activity of your product or service. |
-| fill             | ❌       | `Record<string, string>` | Object used to fill the background of each rectangle based on its level. <br> The level types are `'zero'`, `'low'`, `'high'`, `null`. <br> By default, if the level type is `null`, the color is `#EFF2F5` in light theme and `#151B23` in dark mode. |
+| fill             | ❌       | `Record<string, string>` | Object used to fill the background of each rectangle based on its level. <br> The level types are `'zero'`, `'low'`, `'high'`, `null`. <br> By default, if the level type is `null`, the color is `bgRankEmpty` in light theme and `bgRankEmptyDark` in dark mode. |
 | fromDateLabel    | ❌       | `string`               | Indicates the legend based on length of the period of time that the user is analyzing. <br> Default: `'days ago'`. |
 | status           | ✅       | `string`               | Indicator of the latest status of the analytic chart. |
-| theme            | ❌       | `string`               | Property used to change colors based on theme. <br> Default: `'system'` (based on user preference). Accepted: `'system'`, `'light'`, `'dark'`. |
+| textColor        | ❌       | `string`               | Default: `text-[#1f2328] dark:text-[#f0f6fc]` |
 | titleComponent   | ✅       | `string`               | Main title of the analytic chart. |
 | toDateLabel      | ❌       | `string`               | Default: `'Today'`. |
 | tooltipContentMark | ✅     | `string`               | Description of the main metric of that chart. |
