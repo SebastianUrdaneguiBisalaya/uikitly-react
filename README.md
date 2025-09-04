@@ -56,7 +56,21 @@ Types:
 Using React with TypeScript:
 
 ```tsx
+import { HabitTracking } from 'uikitly-react';
 
+function App() {
+  const [habitTracking, setHabitTracking] = useState<HabitTrackingData[]>([{"date":"2025-01-01","value":5},{"date":"2025-01-02","value":10},{"date":"2025-08-30","value":8}]);
+
+  return (
+    <div className="w-full max-w-3xl mx-auto flex flex-col items-center gap-4 p-2">
+      <div className='flex flex-col justify-center items-center p-2'>
+        <HabitTracking
+          data={habitTracking}
+        />
+      </div>
+    </div>
+  );
+}
 ```
 
 ### Usage - Status Tracking
@@ -91,7 +105,24 @@ Types:
 Using React with TypeScript:
 
 ```tsx
+import { StatusTracking } from 'uikitly-react';
 
+function App() {
+  const [statusTracking, setStatusTracking] = useState<StatusTrackingData[]>([{date: "2025-09-01", mainTitle: "Métrica", content: "Sin inconveniente.", level: null }, { date: "2025-08-31", mainTitle: "Métrica", content: "Sin inconveniente.", level: "zero" }, { date: "2025-08-30", mainTitle: "Métrica", content: "Sin inconveniente.", level: "zero" }, ... ]);
+
+  return (
+    <div className="w-full max-w-3xl mx-auto flex flex-col items-center gap-4 p-2">
+      <div className='flex flex-col justify-center items-center p-2'>
+        <StatusTracking
+          data={statusTracking}
+          titleComponent="Analytics"
+          status="Operational"
+          tooltipContentMark="Company analytics powers logs, metrics, and reports for all users."
+        />
+      </div>
+    </div>
+  );
+}
 ```
 
 ## Contributing
