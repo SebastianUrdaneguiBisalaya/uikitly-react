@@ -1,16 +1,13 @@
 {
   "name": "uikitly-react",
   "version": "1.0.0",
-  "description": "uikitly is a TypeScript library that provides two customizable reactt components inspired by GitHub's contribution tracker and status tracking chart.",
+  "description": "uikitly-react is a TypeScript library that provides two customizable reactt components inspired by GitHub's contribution tracker and status tracking chart.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup",
-    "dev": "vite --config playground/vite.config.ts",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "tsup"
   },
   "keywords": [],
   "author": "Sebastian Marat Urdanegui Bisalaya (https://sebastianurdanegui.vercel.app/)",
@@ -23,11 +20,13 @@
     "typescript": "5.9.2"
   },
   "peerDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "@tailwindcss/vite": "^4.1.12",
     "tailwindcss": "^4.1.12"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.7.4",
+    "clsx": "^2.1.1"
   }
 }
