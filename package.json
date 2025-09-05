@@ -1,6 +1,6 @@
 {
   "name": "uikitly-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "uikitly-react is a TypeScript library that provides two customizable react components inspired by GitHub's contribution tracker and status tracking chart.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

@@ -56,7 +56,9 @@ Types:
 Using React with TypeScript:
 
 ```tsx
-import { HabitTracking } from 'uikitly-react';
+import { HabitTracking, type HabitTrackingProps } from 'uikitly-react';
+
+type HabitTrackingData = HabitTrackingProps["data"];
 
 function App() {
   const [habitTracking, setHabitTracking] = useState<HabitTrackingData[]>([{"date":"2025-01-01","value":5},{"date":"2025-01-02","value":10},{"date":"2025-08-30","value":8}]);
@@ -105,7 +107,9 @@ Types:
 Using React with TypeScript:
 
 ```tsx
-import { StatusTracking } from 'uikitly-react';
+import { StatusTracking, type StatusTrackingProps } from 'uikitly-react';
+
+type StatusTrackingData = StatusTrackingProps["data"];
 
 function App() {
   const [statusTracking, setStatusTracking] = useState<StatusTrackingData[]>([{date: "2025-09-01", mainTitle: "Métrica", content: "Sin inconveniente.", level: null }, { date: "2025-08-31", mainTitle: "Métrica", content: "Sin inconveniente.", level: "zero" }, { date: "2025-08-30", mainTitle: "Métrica", content: "Sin inconveniente.", level: "zero" }, ... ]);

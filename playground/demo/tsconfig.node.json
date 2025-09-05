@@ -21,10 +21,10 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "uikitly-react": ["../src"]
-    }
+    // "baseUrl": ".",
+    // "paths": {
+    //   "uikitly-react": ["../src"]
+    // }
   },
   "include": ["vite.config.ts"]
 }
