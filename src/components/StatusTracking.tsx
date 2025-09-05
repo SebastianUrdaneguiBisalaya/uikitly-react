@@ -108,6 +108,13 @@ export const StatusTracking: React.FC<StatusTrackingProps> = ({
     return data?.length;
   }
 
+  const uptimePercentage = (data: { date: string; mainTitle: string | null; content: string; level: 'zero' | 'low' | 'high' | null }[]) => {
+    const total = data?.filter((val) => !!val.level).length;
+    const uptime = data?.filter((val) => val.level === 'zero').length;
+    const percetage = ((uptime / total) * 100).toFixed(0);
+    return percetage;
+  }
+
   const calculateViewBox = (data: { date: string; mainTitle: string | null; content: string; level: 'zero' | 'low' | 'high' | null }[]) => {
     const dataLength = lengthOfData(data) ?? 0;
     const totalWidth = dataLength * 5;
@@ -342,13 +349,13 @@ export const StatusTracking: React.FC<StatusTrackingProps> = ({
       >
         {
           rectTooltipData && (
-            <div className='tooltip-status-content'>
-              <div className='tooltip-status-header'>
-                <span className='tooltip-status-header-date'>{rectTooltipData.date ?? ''}</span>
+            <div className='flex flex-col gap-2 p-2'>
+              <div>
+                <span className='text-md font-semibold'>{rectTooltipData.date ?? ''}</span>
               </div>
-              <div className='tooltip-status-body'>
-                <span className='tooltip-status-body-title'>{rectTooltipData.mainTitle ?? ''}</span>
-                <span className='tooltip-status-body-content'>{rectTooltipData.content ?? ''}</span>
+              <div className='flex flex-col gap-1'>
+                <span className='text-base font-semibold'>{rectTooltipData.mainTitle ?? ''}</span>
+                <span className='text-md'>{rectTooltipData.content ?? ''}</span>
               </div>
             </div>
           )
@@ -389,7 +396,7 @@ export const StatusTracking: React.FC<StatusTrackingProps> = ({
         <div className={`flex-1 ${bgSpacer} h-[1px] mx-3 mt-3 mb-2`}/>
         <div>
           <span className={`text-sm font-light inline-block ${textColor}`}>
-            {`100% ${uptimeLabel}`}
+            {`${uptimePercentage(data) ?? 0}% ${uptimeLabel}`}
           </span>
         </div>
         <div className={`flex-1 ${bgSpacer} h-[1px] mx-3 mt-3 mb-2`}/>

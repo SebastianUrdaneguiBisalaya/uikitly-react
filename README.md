@@ -7,9 +7,9 @@ The goal of this library is to help developers save working hours by reusing rea
 
 > Developed by [Sebastian Marat Urdanegui Bisalaya](https://sebastianurdanegui.vercel.app/)
 
-![uikitly-react-light](https://res.cloudinary.com/drzumfcdp/image/upload/v1757027513/projects/Captura_de_pantalla_2025-09-04_a_la_s_6.09.21_p._m._kwjeue.png)
+![uikitly-react-light](https://res.cloudinary.com/drzumfcdp/image/upload/v1757048033/projects/light_qtgcbx.png)
 
-![uikitly-react-dark](https://res.cloudinary.com/drzumfcdp/image/upload/v1757027513/projects/Captura_de_pantalla_2025-09-04_a_la_s_6.10.09_p._m._byvxnn.png)
+![uikitly-react-dark](https://res.cloudinary.com/drzumfcdp/image/upload/v1757048033/projects/dark_apfrjf.png)
 
 ## Installing
 
